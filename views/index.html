@@ -14,7 +14,7 @@
 <div class="container">
 <!-- <button type="button" class="btn btn-dark" id="post-btn">Add Book</button> -->
 <a class="btn btn-dark" href="post">POST</a>
-	<div class="d-flex flex-wrap" >
+	<div class="d-flex flex-wrap justify-content-around mb-3" >
 		<!-- LOOP UNTIL ITEM NOT FOUND -->
 		{% if posts|length > 0 %}
 			{% for post in posts %}

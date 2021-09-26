@@ -4,8 +4,6 @@ const bodyParser = require('body-parser')
 const app = express()
 const connection = require('./config/database.js')
 
-
-
 app.set('view engine','html');
 app.engine('html', twig.__express);
 app.set('views','views');
@@ -27,9 +25,6 @@ app.get('/post', (req, res) => {
 	res.render('post')
 })
 
-
-// Problem:
-// Can't post if it's clicked using btn
 app.post('/post', (req, res) => {
 	const name = req.body.name;
 	const author = req.body.author;
@@ -51,7 +46,9 @@ app.post('/post', (req, res) => {
 	res.redirect('/')
 })
 
+
 connection.connect((err) => {
 	if(err) throw err;
 	app.listen(3000)
 })
+
