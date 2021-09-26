@@ -1,0 +1,8 @@
+:root {
+	--bg-color:  #d8d5db;
+	--card-color:  #adacb5;
+}
+
+.card-item {
+	background-color: var(--card-color);
+}

@@ -5,37 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Home | Book Recommendations</title>
+	<link rel="stylesheet" href="css/style.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	
 </head>
 <body>
-<div class="container d-flex">
-	<!-- LOOP UNTIL ITEM NOT FOUND -->
-	{% if posts|length > 0 %}
-		{% for post in posts %}
-			<div class="card" style="width: 18rem;">
-			  <img src="https://mojokstore.com/wp-content/uploads/2018/07/Bumi-Manusia.jpg" class="card-img-top" alt="..." style="width: 10rem;">
-				<ul class="list-group list-group-flush">
-				    <li class="list-group-item book-name"><h5 class="card-title">{{ post.name }}</h5></li>
-				    <li class="list-group-item book-author">{{ post.author }}</li>
-				    <li class="list-group-item">
-				    	<i class="fas fa-star"></i> x5
-				    </li>
-				</ul>
-				<div class="card-body">
-				    <p class="card-text book-desc">{{ post.description }}</p>
+<div class="container">
+<!-- <button type="button" class="btn btn-dark" id="post-btn">Add Book</button> -->
+<a class="btn btn-dark" href="post">POST</a>
+	<div class="d-flex flex-wrap" >
+		<!-- LOOP UNTIL ITEM NOT FOUND -->
+		{% if posts|length > 0 %}
+			{% for post in posts %}
+				<div class="card card-item" style="width: 18rem;">
+				  <img src="https://mojokstore.com/wp-content/uploads/2018/07/Bumi-Manusia.jpg" class="card-img-top" alt="..." style="width: 10rem;">
+					<ul class="list-group list-group-flush card-item" >
+					    <li class="list-group-item book-name"><h5 class="card-title">{{ post.name }}</h5></li>
+					    <li class="list-group-item book-author">{{ post.author }}</li>
+					    <li class="list-group-item">
+					    	<i class="fas fa-star" style="color: #FFD700;"></i> x5
+					    </li>
+					</ul>
+					<div class="card-body">
+					    <p class="card-text book-desc">{{ post.description }}</p>
+					</div>
 				</div>
-			</div>
-		{% endfor %}
-	{% else %}
-		<h4>No Post Found !</h4>	
-	{% endif %}
-
+			{% endfor %}
+		{% else %}
+			<h4>No Post Found !</h4>	
+		{% endif %}
+	</div>
 </div>
-
+<!--  -->
 
  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+ <script src="../index.js"></script>
 </body>
 </html>
