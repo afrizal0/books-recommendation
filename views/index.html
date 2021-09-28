@@ -12,24 +12,18 @@
 </head>
 <body>
 <div class="container">
-<!-- <button type="button" class="btn btn-dark" id="post-btn">Add Book</button> -->
 <a class="btn btn-dark" href="post">POST</a>
-	<div class="d-flex flex-wrap justify-content-around mb-3" >
+	<div class="d-flex flex-wrap justify-content-around mb-3 " >
 		<!-- LOOP UNTIL ITEM NOT FOUND -->
 		{% if posts|length > 0 %}
 			{% for post in posts %}
-				<div class="card card-item" style="width: 18rem;">
-				  <img src="https://mojokstore.com/wp-content/uploads/2018/07/Bumi-Manusia.jpg" class="card-img-top" alt="..." style="width: 10rem;">
-					<ul class="list-group list-group-flush card-item" >
-					    <li class="list-group-item book-name"><h5 class="card-title">{{ post.name }}</h5></li>
-					    <li class="list-group-item book-author">{{ post.author }}</li>
-					    <li class="list-group-item">
-					    	<i class="fas fa-star" style="color: #FFD700;"></i> x5
-					    </li>
-					</ul>
-					<div class="card-body">
-					    <p class="card-text book-desc">{{ post.description }}</p>
-					</div>
+
+				<div class="card card-item mb-5" style="width: 18rem;">
+				  <div class="card-body">
+				        <h5 class="card-title">{{ post.name }}</h5>
+				        <p class="card-text">{{ post.description }}</p>
+				        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+				      </div>
 				</div>
 			{% endfor %}
 		{% else %}
@@ -38,6 +32,8 @@
 	</div>
 </div>
 <!--  -->
+
+
 
  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>

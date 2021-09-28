@@ -3,10 +3,13 @@ const twig = require('twig')
 const bodyParser = require('body-parser')
 const app = express()
 const connection = require('./config/database.js')
+const fileUpload = require('express-fileupload')
 
 app.set('view engine','html');
 app.engine('html', twig.__express);
 app.set('views','views');
+
+app.use(fileUpload());
 
 app.use(bodyParser.urlencoded({extended:false}));
 
@@ -25,26 +28,36 @@ app.get('/post', (req, res) => {
 	res.render('post')
 })
 
+// POST DATA TO MYSQL DB
 app.post('/post', (req, res) => {
-	const name = req.body.name;
-	const author = req.body.author;
-	const description = req.body.description;
+	
+
+	//Get data from ./views/post.html
+	
+	console.log(req.files)
+
+	const username = req.body.username
+	const book_name = req.body.book_name
+	const description = req.body.description
 
 	const posts = {
-		name: name,
-		author: author,
+		book_name: book_name,
+		username: username,
 		description: description
 	}
 
+	// POST DATA TO DB
 	connection.query('INSERT INTO books SET?', posts, (err) => {
 		if(err) {
-			throw err;
 			console.log('error')
+			throw err;
+			
 		}
 		console.log('Data Inserted')
 	})
 	res.redirect('/')
 })
+
 
 
 connection.connect((err) => {

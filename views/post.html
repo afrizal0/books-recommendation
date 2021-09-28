@@ -10,16 +10,20 @@
 	<div class="container">
 	<form method="POST">
 		<div class="mb-3">
-		    <label for="name" class="form-label">Book Name</label>
-		    <input type="text" class="form-control" id="name" aria-describedby="name" name="name" required>
+		    <label for="username" class="form-label">Username</label>
+		    <input type="text" class="form-control" id="username" aria-describedby="username" name="username" required>
 		</div>
 		<div class="mb-3">
-		    <label for="author" class="form-label">Author</label>
-		    <input type="text" class="form-control" id="author" name="author" required>
+		    <label for="book_name" class="form-label">Book Name</label>
+		    <input type="text" class="form-control" id="book_name" aria-describedby="book_name" name="book_name" required>
 		</div>
 		<div class="mb-3">
 		    <label for="description" class="form-label">description</label>
 		    <input type="text" class="form-control" id="description" name="description" required>
+		</div>
+		<div class="mb-3">
+		    <label for="image" class="form-label">image</label>
+		    <input type="file" class="form-control" id="image" name="image" accept="">
 		</div>
 	  <button type="submit" class="btn btn-primary">Submit</button>
 	  <a href="/" type="button" class="btn btn-danger">Cancel</a>
