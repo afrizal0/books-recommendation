@@ -5,28 +5,25 @@
 	<title>Post | Books Recommendations</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 	<div class="container">
-	<form method="POST">
+	<form action="/post" method="post" >
 		<div class="mb-3">
 		    <label for="username" class="form-label">Username</label>
 		    <input type="text" class="form-control" id="username" aria-describedby="username" name="username" required>
 		</div>
 		<div class="mb-3">
 		    <label for="book_name" class="form-label">Book Name</label>
-		    <input type="text" class="form-control" id="book_name" aria-describedby="book_name" name="book_name" required>
+		    <input type="text" class="form-control" id="book_name" name="book_name" required>
 		</div>
 		<div class="mb-3">
 		    <label for="description" class="form-label">description</label>
 		    <input type="text" class="form-control" id="description" name="description" required>
 		</div>
-		<div class="mb-3">
-		    <label for="image" class="form-label">image</label>
-		    <input type="file" class="form-control" id="image" name="image" accept="">
-		</div>
 	  <button type="submit" class="btn btn-primary">Submit</button>
-	  <a href="/" type="button" class="btn btn-danger">Cancel</a>
+	  <a href="/home" type="button" class="btn btn-danger">Cancel</a>
 	</form>
 </div>
  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

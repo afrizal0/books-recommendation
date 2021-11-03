@@ -3,6 +3,6 @@
 	--card-color:  #adacb5;
 }
 
-.card-item {
+html {
 	background-color: var(--card-color);
 }

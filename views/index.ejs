@@ -15,21 +15,19 @@
 <a class="btn btn-dark" href="post">POST</a>
 	<div class="d-flex flex-wrap justify-content-around mb-3 " >
 		<!-- LOOP UNTIL ITEM NOT FOUND -->
-		{% if posts|length > 0 %}
-			{% for post in posts %}
 
-				<div class="card card-item mb-5" style="width: 18rem;">
-				  <div class="card-body">
-				        <h5 class="card-title">{{ post.name }}</h5>
-				        <p class="card-text">{{ post.description }}</p>
-				        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+		<% posts.forEach(function(post) { %>
+			<div class="card card-item mb-5" style="width: 18rem;">
+				 <div class="card-body">
+				    <h5 class="card-title"><%= post.bookname %></h5>
+				    <p class="card-text"><%= post.description %></p>
+				    <p><i><%= post.username %></i></p>
+				    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
 				      </div>
-				</div>
-			{% endfor %}
-		{% else %}
-			<h4>No Post Found !</h4>	
-		{% endif %}
+				</div>	
+		<% }); %>
 	</div>
+	<a href="/google">BTN</a>
 </div>
 <!--  -->
 
