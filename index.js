@@ -3,16 +3,19 @@ const twig = require('twig')
 const bodyParser = require('body-parser')
 const app = express()
 const connection = require('./config/database.js')
-
 app.set('view engine','ejs');
 app.engine('html', twig.__express);
 app.set('views','views');
 app.use(express.static(__dirname + '/views'));
-
 app.use(bodyParser.urlencoded({extended:false}));
+
+
 
 app.get('/', (req, res) => {
 	res.render('home')
+})
+app.get('/post', (req, res) => {
+	res.render('post')
 })
 app.get('/home', (req, res) => {
 	connection.query('SELECT * FROM books', (err, results) => {
@@ -23,10 +26,6 @@ app.get('/home', (req, res) => {
 			})
 		}
 	})
-})
-
-app.get('/post', (req, res) => {
-	res.render('post')
 })
 
 // POST DATA TO MYSQL DB

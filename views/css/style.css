@@ -4,5 +4,26 @@
 }
 
 html {
-	background-color: var(--card-color);
+	background-color: #FFFD95;
+}
+.content{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.card {
+	border: none;
+	box-shadow: 10px 10px #D98C00;
+	display: flex;
+	margin: 10px;
+	padding: 10px;
+	background-color: #FFA400;
+	color: #fff;
+	position: relative;
+}
+#love-icon {
+	float: right;
+	position: absolute;
+	top: -5px;
+	right: -10px;
 }
